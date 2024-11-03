@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,21 +30,21 @@ public class AssetController {
     @GetMapping("")
     public ResponseEntity<ApiResponse<List<Asset>>> getAllAssets() {
         List<Asset> data = assetService.getAllAssets();
-        ApiResponse<List<Asset>> response = new ApiResponse<>(200,"Get asset list success", data );
+        ApiResponse<List<Asset>> response = new ApiResponse<>(200, "Get asset list success", data);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
     @PostMapping("/create")
     public ResponseEntity<ApiResponse<Long>> createAsset(@RequestBody Asset asset) {
         Long assetId = assetService.createAsset(asset);
-        ApiResponse<Long> response = new ApiResponse<Long>(200,"Create asset successfully", assetId);
+        ApiResponse<Long> response = new ApiResponse<Long>(200, "Create asset successfully", assetId);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
-    
-    @PostMapping("/update")
+
+    @PatchMapping("/update")
     public ResponseEntity<ApiResponse<Long>> updateAsset(@RequestBody Asset asset) {
         Long assetId = assetService.updateAsset(asset.getId(), asset);
-        ApiResponse<Long> response = new ApiResponse<Long>(200,"Update asset successfully", assetId);
+        ApiResponse<Long> response = new ApiResponse<Long>(200, "Update asset successfully", assetId);
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
