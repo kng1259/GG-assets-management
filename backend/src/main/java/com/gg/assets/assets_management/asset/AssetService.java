@@ -12,4 +12,9 @@ public class AssetService {
     public List<Asset> getAllAssets() {
         return assetRepository.findAll();
     }
+
+    public Long createAsset(Asset asset) {
+        assetRepository.save(asset);
+        return asset.getId();
+    }
 }

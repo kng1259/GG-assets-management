@@ -25,7 +25,7 @@ public class Asset {
     private Long quantity;
 
     @NonNull
-    private double price;
+    private Double price;
 
     @NonNull
     private String status;
