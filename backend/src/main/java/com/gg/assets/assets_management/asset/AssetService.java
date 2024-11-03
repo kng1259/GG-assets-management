@@ -19,7 +19,10 @@ public class AssetService {
     }
 
     public Asset getAsset(Long id) {
-        return assetRepository.getById(id);
+        return assetRepository.findById(id).orElse(null);}
+
+    public void deleteAsset(Long id) {
+        assetRepository.deleteById(id);
     }
 
 }
