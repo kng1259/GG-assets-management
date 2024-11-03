@@ -12,7 +12,6 @@ public class DepartmentController {
 
     @PostMapping("/create")
     public Department createDepartment(@RequestBody Department department) {
-        // Process the request body here, such as saving to the database
         return departmentService.createDept(department);
     }
 
