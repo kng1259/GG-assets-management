@@ -28,7 +28,6 @@ public class AssetService {
         existingAsset.setQuantity(_asset.getQuantity());
         existingAsset.setPrice(_asset.getPrice());
         existingAsset.setStatus(_asset.getStatus());
-        existingAsset.setDepartId(_asset.getDepartId());
 
         assetRepository.save(existingAsset);
         return _asset.getId();

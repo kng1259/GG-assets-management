@@ -17,8 +17,7 @@ public class SeedDatabase {
     CommandLineRunner initDatabase(
             UserRepository userRepository,
             DepartmentRepository departmentRepository,
-            AssetRepository assetRepository
-    )
+            AssetRepository assetRepository)
             throws Exception {
         Department department1 = new Department("department1");
         Department department2 = new Department("department2");
@@ -26,9 +25,9 @@ public class SeedDatabase {
         User user2 = new User("user2", "b@g.c", "123", department2);
         departmentRepository.save(department1);
         departmentRepository.save(department2);
-        Asset asset2 = new Asset("asset2", 20L, 20.0, "ACTIVE");
-        Asset asset1 = new Asset("asset1", 10L, 10.0, "ACTIVE");
-        Asset asset3 = new Asset("asset3", 30L, 30.0, "ACTIVE");
+        Asset asset2 = new Asset("asset2", 20L, 20.0, "ACTIVE", department1);
+        Asset asset1 = new Asset("asset1", 10L, 10.0, "ACTIVE", department1);
+        Asset asset3 = new Asset("asset3", 30L, 30.0, "ACTIVE", department1);
         userRepository.save(user1);
         userRepository.save(user2);
         assetRepository.save(asset1);
