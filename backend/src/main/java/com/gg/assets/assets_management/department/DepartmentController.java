@@ -14,17 +14,6 @@ public class DepartmentController {
     @Autowired
     DepartmentService departmentService;
 
-
-    // Process the request body here, such as saving to the database
-//        Department newDept = new Department(deptName);
-//    public ResponseEntity<ApiResponse<Department>> Department result = departmentService.createDept(payLoad);
-//        if(result == null) {
-//            ResponseEntity res = new ReponseEntity(400, "Cannot create");
-//            return res;
-//        } else {
-//            ReponseEntity res = new ReponseEntity(200, "success");
-//            return res;
-//        }
     @PostMapping("/create")
     public ResponseEntity<ApiResponse<Department>> createDept(@RequestBody Department newDept) {
         Department result = departmentService.createDept(newDept);
