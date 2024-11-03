@@ -17,4 +17,9 @@ public class AssetService {
         assetRepository.save(asset);
         return asset.getId();
     }
+
+    public Asset getAsset(Long id) {
+        return assetRepository.getById(id);
+    }
+
 }

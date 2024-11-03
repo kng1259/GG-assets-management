@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c6aa946-7606-469a-a569-b3e2fca66169" name="Changes" comment="" />
+    <list default="true" id="8c6aa946-7606-469a-a569-b3e2fca66169" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,17 +29,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="assets_management" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="assets_management" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -69,9 +65,9 @@
     "Gradle.AssetsManagementApplicationTests.executor": "Run",
     "Gradle.backend [:com.gg.assets.assets_management.AssetsManagementApplication.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "asset",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/USER/UDEMY/JAVA/section-3/RestApp",
+    "last_opened_file_path": "D:/Code/Asset",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>

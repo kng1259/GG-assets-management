@@ -1,33 +1,4 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleSettings">
-    <option name="linkedExternalProjectsSettings">
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/backend" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-    </option>
-  </component>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="GradleSettings">
-    <option name="linkedExternalProjectsSettings">
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/backend" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-    </option>
-  </component>
->>>>>>> 1967b3c3f8f550ec13aaea6e11501791d0410f97
+  <component name="GradleMigrationSettings" migrationVersion="1" />
 </project>
