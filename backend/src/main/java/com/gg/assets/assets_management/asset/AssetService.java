@@ -32,4 +32,11 @@ public class AssetService {
         assetRepository.save(existingAsset);
         return _asset.getId();
     }
+    public Asset getAsset(Long id) {
+        return assetRepository.findById(id).orElse(null);}
+
+    public void deleteAsset(Long id) {
+        assetRepository.deleteById(id);
+    }
+
 }
