@@ -1,5 +1,6 @@
 package com.gg.assets.assets_management.asset;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.gg.assets.assets_management.department.Department;
 
 import jakarta.persistence.Entity;
@@ -37,5 +38,6 @@ public class Asset {
     @ManyToOne
     @NonNull
     @JoinColumn(name = "department_id")
+    @JsonIgnore
     private Department department;
 }

@@ -20,7 +20,14 @@ public class UserService {
     }
 
     public List<Asset> getAssetsByUserId(Long userId) {
-        Long departmentId = userRepository.findById(userId).orElseThrow().getDepartment().getId();
-        return assetRepository.findByDepartmentId(departmentId);
+        return userRepository.findById(userId).orElseThrow().getDepartment().getAssets();
+    }
+
+    public void addAssetToUser(Long userId, Asset asset) {
+        User user = userRepository.findById(userId).orElseThrow();
+        asset.setDepartment(user.getDepartment());
+        assetRepository.save(asset);
+        user.getDepartment().getAssets().add(asset);
+        userRepository.save(user);
     }
 }
