@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c6aa946-7606-469a-a569-b3e2fca66169" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetService.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentService.java" afterDir="false" />
+>>>>>>> 45f5d1ea5425bd92c14d27a271aff57429a3b85a
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +39,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="assets_management" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="assets_management" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -68,19 +68,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AssetsManagementApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AssetsManagementApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.AssetsManagementApplicationTests.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.backend [:com.gg.assets.assets_management.AssetsManagementApplication.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/UDEMY/JAVA/section-3/RestApp&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AssetsManagementApplication.executor": "Run",
+    "Gradle.AssetsManagementApplicationTests.contextLoads.executor": "Run",
+    "Gradle.AssetsManagementApplicationTests.executor": "Run",
+    "Gradle.backend [:com.gg.assets.assets_management.AssetsManagementApplication.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
+    "git-widget-placeholder": "asset",
+=======
+    "git-widget-placeholder": "Merging asset",
+>>>>>>> 45f5d1ea5425bd92c14d27a271aff57429a3b85a
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Code/Asset",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.AssetsManagementApplication">
     <configuration name="AssetsManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gg.assets.assets_management.AssetsManagementApplication" />
@@ -161,16 +165,5 @@
       <updated>1730571873508</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentController.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

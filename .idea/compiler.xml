@@ -10,6 +10,5 @@
         <module name="assets_management.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="21" />
   </component>
 </project>

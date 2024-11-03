@@ -1,9 +1,14 @@
 package com.gg.assets.assets_management.asset;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gg.assets.assets_management.department.Department;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -25,10 +30,14 @@ public class Asset {
     private Long quantity;
 
     @NonNull
-    private double price;
+    private Double price;
 
     @NonNull
     private String status;
 
-    private Long departId;
+    @ManyToOne
+    @NonNull
+    @JoinColumn(name = "department_id")
+    @JsonIgnore
+    private Department department;
 }

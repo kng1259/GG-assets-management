@@ -27,6 +27,7 @@ public class DepartmentController {
         }
     }
 
+
     @GetMapping("")
     public String deptHi() {
         return "This dept route";
