@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c6aa946-7606-469a-a569-b3e2fca66169" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/asset/AssetService.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentService.java" afterDir="false" />
+>>>>>>> 45f5d1ea5425bd92c14d27a271aff57429a3b85a
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +75,11 @@
     "Gradle.AssetsManagementApplicationTests.executor": "Run",
     "Gradle.backend [:com.gg.assets.assets_management.AssetsManagementApplication.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+<<<<<<< HEAD
     "git-widget-placeholder": "asset",
+=======
+    "git-widget-placeholder": "Merging asset",
+>>>>>>> 45f5d1ea5425bd92c14d27a271aff57429a3b85a
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Code/Asset",
     "settings.editor.selected.configurable": "preferences.lookFeel"

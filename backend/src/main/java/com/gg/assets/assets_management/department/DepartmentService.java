@@ -9,7 +9,6 @@ public class DepartmentService {
     DepartmentRepository departmentRepository;
 
     public Department createDept(Department newDept) {
-        departmentRepository.save(newDept);
-        return newDept;
+        return departmentRepository.save(newDept);
     }
 }
