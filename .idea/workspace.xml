@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c6aa946-7606-469a-a569-b3e2fca66169" name="Changes" comment="" />
+    <list default="true" id="8c6aa946-7606-469a-a569-b3e2fca66169" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +71,7 @@
     "Gradle.AssetsManagementApplicationTests.executor": "Run",
     "Gradle.backend [:com.gg.assets.assets_management.AssetsManagementApplication.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "asset",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/USER/UDEMY/JAVA/section-3/RestApp",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -155,5 +157,16 @@
       <updated>1730571873508</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/com/gg/assets/assets_management/department/DepartmentController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
