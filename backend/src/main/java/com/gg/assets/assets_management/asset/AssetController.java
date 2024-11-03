@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import com.gg.assets.assets_management.ApiResponse;
+import org.springframework.http.ResponseEntity;
 
 @CrossOrigin("*")
 @RestController
@@ -22,9 +25,16 @@ public class AssetController {
     }
 
     @PostMapping("/create")
-    public Asset createAsset(@RequestBody Asset asset) {
-        System.out.println(asset);
-        assetService.createAsset(asset);
-        return asset;
+    public ResponseEntity<ApiResponse<Asset>> createAsset(@RequestBody Asset asset) {
+        Long assetId = assetService.createAsset(asset);
+        ApiResponse<Asset> response = new ApiResponse<>(200,"Create asset successfully", assetId);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+    
+    @PostMapping("/update")
+    public ResponseEntity<ApiResponse<Asset>> updateAsset(@RequestBody Asset asset) {
+        Long assetId = assetService.updateAsset(asset.getId(), asset);
+        ApiResponse<Asset> response = new ApiResponse<>(200,"Update asset successfully", assetId);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 }
