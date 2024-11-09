@@ -23,11 +23,20 @@ public class AssetService {
         Optional<Asset> optionalAsset = assetRepository.findById(id);
 
         Asset existingAsset = optionalAsset.get();
+        if (_asset.getName() != null && !_asset.getName().isEmpty()){
+            existingAsset.setName(_asset.getName());
+        }
 
-        existingAsset.setName(_asset.getName());
-        existingAsset.setQuantity(_asset.getQuantity());
-        existingAsset.setPrice(_asset.getPrice());
-        existingAsset.setStatus(_asset.getStatus());
+        if (_asset.getQuantity() != null && _asset.getQuantity() > 0) {
+            existingAsset.setQuantity(_asset.getQuantity());
+        }
+
+        if (_asset.getPrice() != null && _asset.getPrice() > 0) {
+            existingAsset.setPrice(_asset.getPrice());
+        }
+        if (_asset.getStatus() != null && !_asset.getStatus().isEmpty()) {
+            existingAsset.setStatus(_asset.getStatus());
+        }
 
         assetRepository.save(existingAsset);
         return _asset.getId();
@@ -38,5 +47,9 @@ public class AssetService {
     public void deleteAsset(Long id) {
         assetRepository.deleteById(id);
     }
-
+    
+    public Asset findAssetByID(Long id){
+        return assetRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("No asset"));
+    }
 }

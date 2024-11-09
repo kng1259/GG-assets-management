@@ -1,6 +1,8 @@
 package com.gg.assets.assets_management.asset;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gg.assets.assets_management.department.Department;
 
 import jakarta.persistence.Entity;
@@ -13,6 +15,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 @Entity(name = "assets")
 @Data
@@ -38,6 +41,6 @@ public class Asset {
     @ManyToOne
     @NonNull
     @JoinColumn(name = "department_id")
-    @JsonIgnore
+    @JsonIgnoreProperties("assets")
     private Department department;
 }
