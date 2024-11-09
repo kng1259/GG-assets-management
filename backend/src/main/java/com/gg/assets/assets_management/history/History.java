@@ -44,4 +44,10 @@ public class History {
     @JoinColumn(name = "asset_id")
     private Asset asset;
 
+    public History(User user, Asset asset, String action) {
+        this.user = user;
+        this.asset = asset;
+        this.action = action;
+    }
+
 }

@@ -6,6 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gg.assets.assets_management.user.User;
+import com.gg.assets.assets_management.asset.Asset;
+
 @Service
 public class HistoryService {
     @Autowired
@@ -24,4 +27,11 @@ public class HistoryService {
         Optional<History> histById = historyRepository.findById(id);
         return histById;
     }
+
+    public Long createHisttHistory(User user, Asset asset, String action) {
+        History history = new History(user, asset, action);
+        historyRepository.save(history);
+        return history.getId();
+    }
+
 }

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.gg.assets.assets_management.asset.Asset;
 import com.gg.assets.assets_management.asset.AssetRepository;
+import com.gg.assets.assets_management.history.HistoryService;
 
 @Service
 public class UserService {
@@ -14,6 +15,9 @@ public class UserService {
 
     @Autowired
     AssetRepository assetRepository;
+
+    @Autowired
+    HistoryService historyService;
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -29,5 +33,6 @@ public class UserService {
         assetRepository.save(asset);
         user.getDepartment().getAssets().add(asset);
         userRepository.save(user);
+        historyService.createHisttHistory(user, asset, "Created");
     }
 }
