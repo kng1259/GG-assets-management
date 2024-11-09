@@ -1,6 +1,8 @@
 package com.gg.assets.assets_management.asset;
 
 import java.util.List;
+
+import com.gg.assets.assets_management.department.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +29,9 @@ public class AssetController {
     @Autowired
     AssetService assetService;
 
+    @Autowired
+    DepartmentService departmentService;
+
     @GetMapping("")
     public ResponseEntity<ApiResponse<List<Asset>>> getAllAssets() {
         List<Asset> data = assetService.getAllAssets();
@@ -42,10 +47,30 @@ public class AssetController {
     }
 
     @PatchMapping("/update")
-    public ResponseEntity<ApiResponse<Long>> updateAsset(@RequestBody Asset asset) {
-        Long assetId = assetService.updateAsset(asset.getId(), asset);
-        ApiResponse<Long> response = new ApiResponse<Long>(200, "Update asset successfully", assetId);
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+    public ResponseEntity<ApiResponse<Asset>> updateAsset(@RequestBody Asset asset) {
+        try {
+            if (asset == null
+                    || asset.getId() == null
+                    || asset.getPrice() <= 0
+                    || asset.getQuantity() <=0
+                    || departmentService.getByID(asset.getId()).isEmpty()
+            ) {
+                ApiResponse<Asset> errorResponse = new ApiResponse<>(400, "Invalid asset data", null);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
+            }
+
+            Long assetId = assetService.updateAsset(asset.getId(), asset);
+            if (assetId != null) {
+                ApiResponse<Asset> response = new ApiResponse<>(200, "Update asset successfully", assetService.getAsset(assetId));
+                return ResponseEntity.status(HttpStatus.OK).body(response);
+            } else {
+                ApiResponse<Asset> notFoundResponse = new ApiResponse<>(404, "Asset not found", null);
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(notFoundResponse);
+            }
+        } catch (Exception e) {
+            ApiResponse<Asset> errorResponse = new ApiResponse<>(500, "Error updating asset: " + e.getMessage(), null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(errorResponse);
+        }
     }
 
     @GetMapping("/{id}")
