@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/history")
@@ -32,20 +31,20 @@ public class HistoryController {
 
     @Autowired
     UserService userService;
-    
+
     @Autowired
     AssetService assetService;
 
     @GetMapping("")
     public ResponseEntity<ApiResponse<List<History>>> getAllHistories() {
-        List<History> result =  historyService.getAllHistory();
+        List<History> result = historyService.getAllHistory();
         System.out.println(result);
         ApiResponse<List<History>> reponse = new ApiResponse<List<History>>(200, "GET ALL history", result);
         return ResponseEntity.status(HttpStatus.OK).body(reponse);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ApiResponse<Long>> createHist(@RequestBody HistoryReqDTO newHistReq ) {
+    public ResponseEntity<ApiResponse<Long>> createHist(@RequestBody HistoryReqDTO newHistReq) {
         String action = newHistReq.action;
         Long userID = newHistReq.userID;
         Long assetID = newHistReq.assetID;
@@ -55,19 +54,18 @@ public class HistoryController {
         newHist.setAction(action);
         newHist.setUser(user);
         newHist.setAsset(asset);
-        History savedHistory = historyService.create(newHist);
+        // History savedHistory = historyService.create(newHist);
 
         System.out.println(action + userID + assetID);
-        System.out.println(savedHistory);
-        // ApiResponse<Long> reponse = new ApiResponse<Long>(200, "create history", result);
+        // System.out.println(savedHistory);
+        // ApiResponse<Long> reponse = new ApiResponse<Long>(200, "create history",
+        // result);
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
-
 
     @GetMapping("/hello")
     public String getMethodName() {
         return "Hello World";
     }
-    
-    
+
 }

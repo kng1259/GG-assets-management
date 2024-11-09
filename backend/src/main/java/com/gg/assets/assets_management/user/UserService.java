@@ -18,10 +18,14 @@ public class UserService {
     @Autowired
     AssetRepository assetRepository;
 
+    @Autowired
+    HistoryService historyService;
+
     public User getUserById(Long id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User không tồn tại"));
     }
+
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
@@ -36,6 +40,6 @@ public class UserService {
         assetRepository.save(asset);
         user.getDepartment().getAssets().add(asset);
         userRepository.save(user);
-        // historyService.createHisttHistory(user, asset, "Created");
+        historyService.createHisttHistory(user, asset, "Created");
     }
 }

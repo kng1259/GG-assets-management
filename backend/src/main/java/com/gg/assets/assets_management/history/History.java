@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gg.assets.assets_management.asset.Asset;
 import com.gg.assets.assets_management.user.User;
 
@@ -37,11 +38,13 @@ public class History {
     @ManyToOne
     @NonNull
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties("department")
     private User user;
 
     @ManyToOne
     @NonNull
     @JoinColumn(name = "asset_id")
+    @JsonIgnoreProperties("asset")
     private Asset asset;
 
     public History(User user, Asset asset, String action) {
