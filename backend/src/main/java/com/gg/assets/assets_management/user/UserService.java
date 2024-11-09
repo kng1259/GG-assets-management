@@ -1,11 +1,14 @@
 package com.gg.assets.assets_management.user;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gg.assets.assets_management.asset.Asset;
 import com.gg.assets.assets_management.asset.AssetRepository;
+import com.gg.assets.assets_management.history.HistoryService;
 
 @Service
 public class UserService {
@@ -14,6 +17,14 @@ public class UserService {
 
     @Autowired
     AssetRepository assetRepository;
+
+    @Autowired
+    HistoryService historyService;
+
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User không tồn tại"));
+    }
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
@@ -29,5 +40,6 @@ public class UserService {
         assetRepository.save(asset);
         user.getDepartment().getAssets().add(asset);
         userRepository.save(user);
+        historyService.createHisttHistory(user, asset, "Created");
     }
 }

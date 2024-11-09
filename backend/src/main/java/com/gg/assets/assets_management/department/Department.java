@@ -1,5 +1,6 @@
 package com.gg.assets.assets_management.department;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -30,5 +31,6 @@ public class Department {
 
     @OneToMany(mappedBy = "department")
     @JsonIgnoreProperties("department")
-    private List<Asset> assets;
+    private List<Asset> assets = new ArrayList<>();
+
 }

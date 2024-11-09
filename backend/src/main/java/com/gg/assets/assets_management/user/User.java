@@ -11,6 +11,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gg.assets.assets_management.department.Department;
 
 @Entity(name = "users")

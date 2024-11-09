@@ -8,16 +8,21 @@ import com.gg.assets.assets_management.department.Department;
 import com.gg.assets.assets_management.department.DepartmentRepository;
 import com.gg.assets.assets_management.user.User;
 import com.gg.assets.assets_management.user.UserRepository;
+import com.gg.assets.assets_management.user.UserService;
+
+import jakarta.transaction.Transactional;
+
 import com.gg.assets.assets_management.asset.Asset;
 import com.gg.assets.assets_management.asset.AssetRepository;
 
 @Configuration
 public class SeedDatabase {
     @Bean
+    @Transactional
     CommandLineRunner initDatabase(
             UserRepository userRepository,
             DepartmentRepository departmentRepository,
-            AssetRepository assetRepository)
+            UserService userService)
             throws Exception {
         Department department1 = new Department("department1");
         Department department2 = new Department("department2");
@@ -30,9 +35,9 @@ public class SeedDatabase {
         Asset asset3 = new Asset("asset3", 30L, 30.0, "ACTIVE", department1);
         userRepository.save(user1);
         userRepository.save(user2);
-        assetRepository.save(asset1);
-        assetRepository.save(asset2);
-        assetRepository.save(asset3);
+        userService.addAssetToUser(user1.getId(), asset1);
+        userService.addAssetToUser(user1.getId(), asset2);
+        userService.addAssetToUser(user1.getId(), asset3);
 
         return args -> {
             System.out.println("Seeding done");
