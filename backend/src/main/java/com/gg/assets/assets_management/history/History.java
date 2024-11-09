@@ -18,6 +18,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity(name = "histories")
 @Data
@@ -38,13 +39,15 @@ public class History {
     @ManyToOne
     @NonNull
     @JoinColumn(name = "user_id")
+    @ToString.Exclude
     @JsonIgnoreProperties("department")
     private User user;
 
     @ManyToOne
     @NonNull
     @JoinColumn(name = "asset_id")
-    @JsonIgnoreProperties("asset")
+    @ToString.Exclude
+    @JsonIgnoreProperties("department")
     private Asset asset;
 
     public History(User user, Asset asset, String action) {
