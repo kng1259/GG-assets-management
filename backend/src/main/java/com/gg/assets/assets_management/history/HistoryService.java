@@ -34,4 +34,10 @@ public class HistoryService {
         return history.getId();
     }
 
+    public Long createHisttHistory(Asset asset, String action) {
+        History history = new History(asset, action);
+        historyRepository.save(history);
+        return history.getId();
+    }
+
 }

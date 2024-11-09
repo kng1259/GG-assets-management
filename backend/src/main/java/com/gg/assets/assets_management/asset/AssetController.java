@@ -3,6 +3,8 @@ package com.gg.assets.assets_management.asset;
 import java.util.List;
 
 import com.gg.assets.assets_management.department.DepartmentService;
+import com.gg.assets.assets_management.history.HistoryService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +34,9 @@ public class AssetController {
     @Autowired
     DepartmentService departmentService;
 
+    @Autowired
+    HistoryService historyService;
+
     @GetMapping("")
     public ResponseEntity<ApiResponse<List<Asset>>> getAllAssets() {
         List<Asset> data = assetService.getAllAssets();
@@ -52,16 +57,17 @@ public class AssetController {
             if (asset == null
                     || asset.getId() == null
                     || asset.getPrice() <= 0
-                    || asset.getQuantity() <=0
-                    || departmentService.getByID(asset.getId()).isEmpty()
-            ) {
+                    || asset.getQuantity() <= 0
+                    || departmentService.getByID(asset.getId()).isEmpty()) {
                 ApiResponse<Asset> errorResponse = new ApiResponse<>(400, "Invalid asset data", null);
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
             }
 
             Long assetId = assetService.updateAsset(asset.getId(), asset);
             if (assetId != null) {
-                ApiResponse<Asset> response = new ApiResponse<>(200, "Update asset successfully", assetService.getAsset(assetId));
+                ApiResponse<Asset> response = new ApiResponse<>(200, "Update asset successfully",
+                        assetService.getAsset(assetId));
+                historyService.createHisttHistory(asset, "Updated");
                 return ResponseEntity.status(HttpStatus.OK).body(response);
             } else {
                 ApiResponse<Asset> notFoundResponse = new ApiResponse<>(404, "Asset not found", null);

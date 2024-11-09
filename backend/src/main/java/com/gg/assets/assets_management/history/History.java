@@ -37,7 +37,6 @@ public class History {
     private String action;
 
     @ManyToOne
-    @NonNull
     @JoinColumn(name = "user_id")
     @ToString.Exclude
     @JsonIgnoreProperties("department")
@@ -49,6 +48,11 @@ public class History {
     @ToString.Exclude
     @JsonIgnoreProperties("department")
     private Asset asset;
+
+    public History(Asset asset, String action) {
+        this.asset = asset;
+        this.action = action;
+    }
 
     public History(User user, Asset asset, String action) {
         this.user = user;
