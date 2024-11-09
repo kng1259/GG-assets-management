@@ -24,4 +24,8 @@ public class HistoryService {
         Optional<History> histById = historyRepository.findById(id);
         return histById;
     }
+
+    public History create(History newHist) {
+        return historyRepository.save(newHist);
+    }
 }

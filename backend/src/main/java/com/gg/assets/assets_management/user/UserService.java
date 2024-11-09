@@ -1,6 +1,8 @@
 package com.gg.assets.assets_management.user;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,10 @@ public class UserService {
     @Autowired
     AssetRepository assetRepository;
 
+    public User getUserById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User không tồn tại"));
+    }
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }

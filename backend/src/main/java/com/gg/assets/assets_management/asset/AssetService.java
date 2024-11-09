@@ -47,5 +47,9 @@ public class AssetService {
     public void deleteAsset(Long id) {
         assetRepository.deleteById(id);
     }
-
+    
+    public Asset findAssetByID(Long id){
+        return assetRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("No asset"));
+    }
 }
