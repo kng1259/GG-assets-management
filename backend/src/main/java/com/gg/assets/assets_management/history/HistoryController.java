@@ -1,5 +1,6 @@
-package com.history;
+package com.gg.assets.assets_management.history;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,18 +25,27 @@ public class HistoryController {
     @Autowired
     HistoryService historyService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<ApiResponse<List<History>>> getAllHistories() {
         List<History> result =  historyService.getAllHistory();
+        System.out.println(result);
         ApiResponse<List<History>> reponse = new ApiResponse<List<History>>(200, "GET ALL history", result);
         return ResponseEntity.status(HttpStatus.OK).body(reponse);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<ApiResponse<<History>> createHist(@RequestBody History newHist) {
-        History result =  historyService.createHisttHistory(newHist);
-        ApiResponse<History> reponse = new ApiResponse<History>(200, "create history", result);
+    public ResponseEntity<ApiResponse<Long>> createHist(@RequestBody History newHist) {
+        newHist.setTime(LocalDateTime.now());
+        Long result =  historyService.createHisttHistory(newHist);
+        ApiResponse<Long> reponse = new ApiResponse<Long>(200, "create history", result);
         return ResponseEntity.status(HttpStatus.OK).body(reponse);
     }
+
+
+    @GetMapping("/hello")
+    public String getMethodName() {
+        return "Hello World";
+    }
+    
     
 }

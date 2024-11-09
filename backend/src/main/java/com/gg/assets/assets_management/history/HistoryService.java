@@ -1,16 +1,19 @@
-package com.history;
+package com.gg.assets.assets_management.history;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class HistoryService {
     @Autowired
     HistoryRepository historyRepository;
 
-    public History createHisttHistory(History newHistory) {
-        return historyRepository.save(newHistory);
+    public Long createHisttHistory(History newHistory) {
+        historyRepository.save(newHistory);
+        return newHistory.getId();
     }
 
     public List<History> getAllHistory() {
